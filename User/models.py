@@ -14,6 +14,9 @@ class User(AbstractUser):
 
     phone_number = models.CharField(max_length=20,db_index=True,blank=True,null=True)
 
+    created_at= models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    updated_at= models.DateTimeField(auto_now=True,null=True,blank=True)
+    
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = [] 
     objects = UserManager()  
