@@ -8,4 +8,4 @@ from Category.Serializer.category_serializer import CategorySerializer
 class CategoryModelViewSet(ModelViewSet):
 
     serializer_class=CategorySerializer
-    queryset=CategoryModel.objects.all()
+    queryset=CategoryModel.objects.filter(is_delete=False).order_by('-created_at')
