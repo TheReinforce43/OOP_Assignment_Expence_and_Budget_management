@@ -14,8 +14,8 @@ class CreateUserExpenseSerializer(serializers.ModelSerializer):
 
 
 class GetUserExpenseSerializer(serializers.ModelSerializer):
-    user = UserProfileSerializer(read_only=True)
-    category = CategorySerializer(read_only=True)
+    user = UserProfileSerializer(read_only=True,many=False)
+    category = CategorySerializer(read_only=True,many=False)
 
     class Meta:
         model = UserExpenseModel
